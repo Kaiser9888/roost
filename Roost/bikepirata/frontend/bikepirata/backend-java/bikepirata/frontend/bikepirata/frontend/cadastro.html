@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Roost</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="auth-page">
+
+    <div class="auth-container">
+        <div class="auth-header">
+            <a href="index.html" class="logo">
+                <i class="fas fa-bicycle"></i>
+                <span>ROOST</span>
+            </a>
+            <p class="auth-subtitle">Cadastre-se gratuitamente</p>
+        </div>
+        
+        <div class="auth-card">
+            <h2><i class="fas fa-user-plus"></i> Criar Conta</h2>
+            <p>Preencha seus dados para começar a anunciar</p>
+            
+            <form id="form-cadastro">
+                <div class="form-group">
+                    <label for="nome" class="required">Nome Completo</label>
+                    <input type="text" id="nome" required placeholder="Seu nome completo">
+                    <div class="input-hint">Como você gostaria de ser chamado</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="required">E-mail</label>
+                    <input type="email" id="email" required placeholder="seu@email.com">
+                    <div class="input-hint">Usaremos para login e contato</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="senha" class="required">Senha</label>
+                    <input type="password" id="senha" required minlength="6" placeholder="Mínimo 6 caracteres">
+                    <div class="password-feedback"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" placeholder="(11) 99999-9999">
+                    <div class="input-hint">Para contato sobre seus anúncios</div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" id="cidade" placeholder="Sua cidade">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="estado">Estado</label>
+                        <select id="estado">
+                            <option value="">Selecione</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="PR">Paraná</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="BA">Bahia</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary btn-block">
+                        <i class="fas fa-check-circle"></i> Criar Conta
+                    </button>
+                </div>
+                
+                <div class="auth-links">
+                    <p>Já tem uma conta? <a href="login.html">Faça login aqui</a></p>
+                </div>
+            </form>
+        </div>
+        
+        <div class="auth-footer">
+            <p>Ao cadastrar-se, você concorda com nossos <a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a>.</p>
+            <p><a href="index.html"><i class="fas fa-arrow-left"></i> Voltar para o site</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto - Roost</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <i class="fas fa-bicycle"></i>
+                    <div class="logo-text">
+                        <span class="logo-main">ROOST</span>
+                        <span class="logo-sub">Marketplace de Bikes</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="user-actions">
+                <a href="vender.html" class="btn-vender"><i class="fas fa-plus"></i> Anunciar</a>
+                <a href="index.html" class="btn-voltar"><i class="fas fa-arrow-left"></i> Voltar</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container produto-container">
+        <div class="produto-content">
+            
+            <div class="produto-galeria">
+                <div class="imagem-principal">
+                    <i class="fas fa-bicycle"></i>
+                </div>
+                <div class="miniaturas">
+                    <div class="miniatura ativa"><i class="fas fa-bicycle"></i></div>
+                    <div class="miniatura"><i class="fas fa-bicycle"></i></div>
+                    <div class="miniatura"><i class="fas fa-bicycle"></i></div>
+                </div>
+            </div>
+            
+            
+            <div class="produto-info">
+                <div class="produto-header">
+                    <h1 id="produto-titulo">Carregando...</h1>
+                    <div class="produto-meta">
+                        <span class="categoria" id="produto-categoria"></span>
+                        <span class="condicao" id="produto-condicao"></span>
+                        <span class="visualizacoes"><i class="fas fa-eye"></i> <span id="produto-visualizacoes">0</span> visualizações</span>
+                    </div>
+                </div>
+                
+                <div class="produto-preco-container">
+                    <h2 id="produto-preco">R$ 0,00</h2>
+                    <p class="produto-local" id="produto-local">Localização não disponível</p>
+                </div>
+                
+                <div class="produto-descricao">
+                    <h3><i class="fas fa-align-left"></i> Descrição</h3>
+                    <p id="produto-descricao">Carregando descrição...</p>
+                </div>
+                
+                <div class="produto-detalhes">
+                    <h3><i class="fas fa-cogs"></i> Detalhes Técnicos</h3>
+                    <ul id="produto-detalhes-lista">
+                        
+                    </ul>
+                </div>
+                
+                <div class="vendedor-info">
+                    <h3><i class="fas fa-user"></i> Informações do Vendedor</h3>
+                    <div class="vendedor-card">
+                        <div class="vendedor-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="vendedor-detalhes">
+                            <h4 id="vendedor-nome">Carregando...</h4>
+                            <p><i class="fas fa-phone"></i> <span id="vendedor-telefone">(00) 00000-0000</span></p>
+                            <p><i class="fas fa-map-marker-alt"></i> <span id="vendedor-local">Local não informado</span></p>
+                            <p class="vendedor-membro">Membro desde <span id="vendedor-data">2024</span></p>
+                        </div>
+                        <button class="btn-contatar"><i class="fas fa-comments"></i> Entrar em Contato</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="relacionados-section">
+            <h3><i class="fas fa-bicycle"></i> Bikes Relacionadas</h3>
+            <div class="grid-relacionados" id="grid-relacionados">
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3><i class="fas fa-bicycle"></i> Roost</h3>
+                <p>O maior marketplace de bicicletas do Brasil</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Segurança</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-shield-alt"></i> Dicas de Segurança</a></li>
+                    <li><a href="#"><i class="fas fa-exclamation-triangle"></i> Denunciar Anúncio</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> Central de Ajuda</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Roost - Compre e venda com segurança</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

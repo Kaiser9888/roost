@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anunciar Bike - Roost</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="vender-header">
+        <div class="header-top">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <i class="fas fa-bicycle"></i>
+                    <div class="logo-text">
+                        <span class="logo-main">ROOST</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="user-actions">
+                <a href="index.html" class="btn-voltar"><i class="fas fa-arrow-left"></i> Voltar para Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container vender-container">
+        <h1><i class="fas fa-bullhorn"></i> Anunciar Bike</h1>
+        <p class="subtitle">Preencha os dados da sua bicicleta para vender rapidamente</p>
+        
+        <div id="mensagem" class="message" style="display: none;"></div>
+        
+        <form id="form-anunciar" class="form-vender">
+            <div class="form-section">
+                <h3><i class="fas fa-info-circle"></i> Informações Básicas</h3>
+                <p class="info-text">Preencha as informações principais do seu anúncio</p>
+                
+                <div class="form-group">
+                    <label for="titulo" class="required">Título do Anúncio</label>
+                    <input type="text" id="titulo" required placeholder="Ex: Caloi Explorer 29 - Mountain Bike">
+                    <div class="input-hint">Seja claro e objetivo para atrair mais compradores</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="descricao" class="required">Descrição Detalhada</label>
+                    <textarea id="descricao" rows="5" required placeholder="Descreva sua bike, incluindo: modelo, ano, estado de conservação, modificações, etc."></textarea>
+                    <div class="char-count">0/2000</div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="categoria" class="required">Categoria</label>
+                        <select id="categoria" required>
+                            <option value="">Selecione uma categoria</option>
+                            <option value="mountain">Mountain Bike</option>
+                            <option value="speed">Speed</option>
+                            <option value="urbana">Urbana</option>
+                            <option value="dobravel">Dobrável</option>
+                            <option value="eletrica">Elétrica</option>
+                            <option value="infantil">Infantil</option>
+                            <option value="bmx">BMX</option>
+                            <option value="peças">Peças e Acessórios</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="condicao" class="required">Condição</label>
+                        <select id="condicao" required>
+                            <option value="">Selecione</option>
+                            <option value="novo">Novo</option>
+                            <option value="semi-novo">Semi-novo</option>
+                            <option value="usado">Usado</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h3><i class="fas fa-bicycle"></i> Detalhes da Bike</h3>
+                <p class="info-text">Informações técnicas da sua bicicleta</p>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="marca">Marca</label>
+                        <input type="text" id="marca" placeholder="Ex: Caloi, Specialized, Trek">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="aro">Aro</label>
+                        <input type="number" id="aro" min="10" max="29" placeholder="Ex: 26, 27.5, 29">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="marchas">Nº de Marchas</label>
+                        <input type="number" id="marchas" min="1" max="30" placeholder="Ex: 21, 24, 27">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="suspensao">Tipo de Suspensão</label>
+                    <select id="suspensao">
+                        <option value="">Selecione</option>
+                        <option value="rigida">Rígida</option>
+                        <option value="dianteira">Dianteira</option>
+                        <option value="full">Full Suspension</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h3><i class="fas fa-money-bill-wave"></i> Preço e Localização</h3>
+                <p class="info-text">Defina o preço e onde a bike está localizada</p>
+                
+                <div class="form-group">
+                    <label for="preco" class="required">Preço (R$)</label>
+                    <input type="number" id="preco" required min="0" step="0.01" placeholder="Ex: 1200.00">
+                    <div class="input-hint">Preço em reais. Use ponto para casas decimais</div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cidade-anuncio" class="required">Cidade</label>
+                        <input type="text" id="cidade-anuncio" required placeholder="Sua cidade">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="estado-anuncio" class="required">Estado</label>
+                        <select id="estado-anuncio" required>
+                            <option value="">Selecione</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="PR">Paraná</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="BA">Bahia</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h3><i class="fas fa-phone"></i> Contato</h3>
+                <p class="info-text">Seus dados de contato serão exibidos no anúncio</p>
+                
+                <div class="form-group">
+                    <label for="telefone-anuncio" class="required">Telefone para Contato</label>
+                    <input type="tel" id="telefone-anuncio" required placeholder="(11) 99999-9999">
+                    <div class="input-hint">Compradores entrarão em contato por este número</div>
+                </div>
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit" class="btn-primary btn-large">
+                    <i class="fas fa-check-circle"></i> Publicar Anúncio
+                </button>
+                <button type="button" class="btn-secondary" onclick="window.location.href='index.html'">
+                    <i class="fas fa-times"></i> Cancelar
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Roost - Anuncie sua bike com segurança</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

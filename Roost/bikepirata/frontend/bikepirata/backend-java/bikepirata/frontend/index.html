@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roost - Marketplace de Bicicletas</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon-bike.ico">
+</head>
+<body>
+
+    
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <i class="fas fa-bicycle"></i>
+                    <div class="logo-text">
+                        <span class="logo-main">ROOST</span>
+                        <span class="logo-sub">Marketplace de Bikes</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="search-bar">
+                <form id="form-busca">
+                    <input type="text" placeholder="Buscar bicicletas, peças, acessórios..." id="busca-input">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            
+            <div class="user-actions">
+                <a href="vender.html" class="btn-vender"><i class="fas fa-plus"></i> Anunciar</a>
+                <a href="login.html" class="btn-login" id="btn-login"><i class="fas fa-user"></i> Entrar</a>
+                <div class="user-menu" id="user-menu" style="display: none;">
+                    <span id="user-name"></span>
+                    <a href="meus-anuncios.html"><i class="fas fa-bicycle"></i> Meus Anúncios</a>
+                    <a href="#" id="btn-logout"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="#" data-categoria="mountain"><i class="fas fa-mountain"></i> Mountain Bike</a></li>
+                <li><a href="#" data-categoria="speed"><i class="fas fa-tachometer-alt"></i> Speed</a></li>
+                <li><a href="#" data-categoria="urbana"><i class="fas fa-city"></i> Urbana</a></li>
+                <li><a href="#" data-categoria="eletrica"><i class="fas fa-bolt"></i> Elétrica</a></li>
+                <li><a href="#" data-categoria="bmx"><i class="fas fa-biking"></i> BMX</a></li>
+                <li><a href="#" data-categoria="peças"><i class="fas fa-cogs"></i> Peças</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <section class="hero-banner">
+        <div class="banner-content">
+            <h1>Encontre a Bike Perfeita</h1>
+            <p>Compre, venda ou troque bicicletas de todos os tipos</p>
+            <a href="vender.html" class="btn-anunciar"><i class="fas fa-plus-circle"></i> Anunciar Grátis</a>
+        </div>
+    </section>
+
+    
+    <section class="filtros">
+        <div class="filtros-container">
+            <select id="filtro-categoria">
+                <option value="">Todas Categorias</option>
+                <option value="mountain">Mountain Bike</option>
+                <option value="speed">Speed</option>
+                <option value="urbana">Urbana</option>
+                <option value="dobravel">Dobrável</option>
+                <option value="eletrica">Elétrica</option>
+                <option value="infantil">Infantil</option>
+                <option value="bmx">BMX</option>
+                <option value="peças">Peças e Acessórios</option>
+            </select>
+            
+            <select id="filtro-estado">
+                <option value="">Todos os Estados</option>
+                <option value="SP">São Paulo</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="PR">Paraná</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="BA">Bahia</option>
+            </select>
+            
+            <select id="filtro-condicao">
+                <option value="">Todas Condições</option>
+                <option value="novo">Novo</option>
+                <option value="semi-novo">Semi-novo</option>
+                <option value="usado">Usado</option>
+            </select>
+            
+            <div class="filtro-preco">
+                <input type="number" id="preco-min" placeholder="Preço mínimo" min="0">
+                <span>até</span>
+                <input type="number" id="preco-max" placeholder="Preço máximo" min="0">
+            </div>
+            
+            <button id="btn-filtrar" class="btn-filtrar"><i class="fas fa-filter"></i> Filtrar</button>
+        </div>
+    </section>
+
+    
+    <main class="container">
+        <div class="produtos-header">
+            <h2>Bicicletas em Destaque</h2>
+            <div class="ordenar">
+                <select id="ordenar-por">
+                    <option value="recentes">Mais Recentes</option>
+                    <option value="baratos">Mais Baratos</option>
+                    <option value="caros">Mais Caros</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="grid-produtos" id="grid-produtos">
+            
+        </div>
+        
+        <div class="carregar-mais">
+            <button id="btn-carregar-mais" class="btn-carregar">Carregar Mais Bikes</button>
+        </div>
+    </main>
+
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3><i class="fas fa-bicycle"></i> Roost</h3>
+                <p>O maior marketplace de bicicletas do Brasil. Compre, venda ou troque sua bike com segurança.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="vender.html">Anunciar</a></li>
+                    <li><a href="login.html">Minha Conta</a></li>
+                    <li><a href="#">Ajuda</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Categorias</h3>
+                <ul>
+                    <li><a href="#" data-categoria="mountain">Mountain Bike</a></li>
+                    <li><a href="#" data-categoria="speed">Speed</a></li>
+                    <li><a href="#" data-categoria="urbana">Urbana</a></li>
+                    <li><a href="#" data-categoria="eletrica">Elétrica</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Contato</h3>
+                <p><i class="fas fa-envelope"></i> roos403@gmail.com</p>
+                <p><i class="fas fa-phone"></i> (77) 97400-3328</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Roost - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

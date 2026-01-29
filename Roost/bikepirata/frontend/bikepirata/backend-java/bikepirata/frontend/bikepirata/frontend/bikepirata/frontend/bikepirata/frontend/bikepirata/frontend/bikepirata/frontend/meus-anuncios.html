@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Anúncios - Roost</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <i class="fas fa-bicycle"></i>
+                    <div class="logo-text">
+                        <span class="logo-main">ROOST</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="user-actions">
+                <a href="vender.html" class="btn-vender"><i class="fas fa-plus"></i> Novo Anúncio</a>
+                <a href="index.html" class="btn-voltar"><i class="fas fa-arrow-left"></i> Voltar</a>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="meus-anuncios.html" class="active"><i class="fas fa-bicycle"></i> Meus Anúncios</a></li>
+                <li><a href="#" id="btn-sair"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container meus-anuncios-container">
+        <h1><i class="fas fa-bicycle"></i> Meus Anúncios</h1>
+        <p class="subtitle">Gerencie suas bikes anunciadas</p>
+        
+        <div id="login-required" class="login-required" style="display: none;">
+            <div class="login-card">
+                <i class="fas fa-lock"></i>
+                <h3>Acesso Restrito</h3>
+                <p>Você precisa estar logado para ver seus anúncios</p>
+                <div class="login-actions">
+                    <a href="login.html" class="btn-primary">Fazer Login</a>
+                    <a href="cadastro.html" class="btn-secondary">Criar Conta</a>
+                </div>
+            </div>
+        </div>
+        
+        <div id="meus-anuncios-content" style="display: none;">
+            <div class="anuncios-stats">
+                <div class="stat-card">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3 id="total-anuncios">0</h3>
+                    <p>Anúncios Ativos</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-eye"></i>
+                    <h3 id="total-visualizacoes">0</h3>
+                    <p>Visualizações</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3 id="valor-total">R$ 0</h3>
+                    <p>Valor Total</p>
+                </div>
+            </div>
+            
+            <div class="anuncios-header">
+                <h2>Seus Anúncios</h2>
+                <div class="filtros-anuncios">
+                    <select id="filtro-status">
+                        <option value="ativos">Ativos</option>
+                        <option value="vendidos">Vendidos</option>
+                        <option value="todos">Todos</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="grid-anuncios" id="grid-anuncios">
+                
+            </div>
+            
+            <div class="nenhum-anuncio" id="nenhum-anuncio">
+                <i class="fas fa-bicycle"></i>
+                <h3>Você ainda não tem anúncios</h3>
+                <p>Comece anunciando sua primeira bike!</p>
+                <a href="vender.html" class="btn-primary"><i class="fas fa-plus"></i> Criar Primeiro Anúncio</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Roost - Gerencie seus anúncios com facilidade</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
