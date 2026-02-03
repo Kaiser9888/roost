@@ -159,6 +159,57 @@ header {
     transform: translateY(-2px);
 }
 
+.btn-personalizar {
+    background: #8b0000;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-personalizar:hover {
+    background: #b00000;
+    transform: translateY(-2px);
+}
+
+.btn-carrinho {
+    background: #1a5f7a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.btn-carrinho:hover {
+    background: #2a7fa0;
+    transform: translateY(-2px);
+}
+
+.btn-carrinho span {
+    background: #8b0000;
+    color: white;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
 .btn-login, .btn-voltar {
     background: #333;
     color: white;
@@ -235,6 +286,17 @@ header {
 .main-nav a:hover, .main-nav a.active {
     color: #8b0000;
     background: rgba(139, 0, 0, 0.1);
+}
+
+.main-nav a.destaque {
+    background: #8b0000;
+    color: white;
+    font-weight: bold;
+}
+
+.main-nav a.destaque:hover {
+    background: #b00000;
+    color: white;
 }
 
 /* ============================================

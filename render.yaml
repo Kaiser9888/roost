@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: bikepirata-api
+    runtime: docker
+    dockerfilePath: ./Roost/Dockerfile
+    region: oregon
+    plan: free
+    envVars:
+      - key: RENDER_EXTERNAL_HOSTNAME
+        scope: build
+      - key: JAVA_OPTS
+        value: "-Xmx512m"
+    healthCheckPath: /
+    preDeployCommand: ""
+    autoDeploy: true
+    maxShutdownDelaySeconds: 30

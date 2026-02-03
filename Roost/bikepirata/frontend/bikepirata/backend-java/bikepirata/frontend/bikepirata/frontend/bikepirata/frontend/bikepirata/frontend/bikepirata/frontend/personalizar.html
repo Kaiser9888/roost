@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Builder - Roost</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-text">
+                        <span class="logo-main">ROOST</span>
+                        <span class="logo-sub">Bike Builder</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="user-actions">
+                <a href="index.html" class="btn-voltar">Voltar ao Catálogo</a>
+                <a href="carrinho.html" class="btn-carrinho">Carrinho <span id="carrinho-contador">0</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container-builder">
+        <!-- Sidebar de Navegação -->
+        <aside class="builder-sidebar">
+            <div class="sidebar-header">
+                <h2>CONFIGURAR SUA BIKE</h2>
+            </div>
+            
+            <nav class="builder-nav">
+                <button class="nav-item active" data-component="frame">
+                    <span class="nav-label">Quadro</span>
+                    <span class="nav-status" id="status-frame">○</span>
+                </button>
+                <button class="nav-item" data-component="wheels">
+                    <span class="nav-label">Rodas</span>
+                    <span class="nav-status" id="status-wheels">○</span>
+                </button>
+                <button class="nav-item" data-component="drivetrain">
+                    <span class="nav-label">Transmissão</span>
+                    <span class="nav-status" id="status-drivetrain">○</span>
+                </button>
+                <button class="nav-item" data-component="brakes">
+                    <span class="nav-label">Freios</span>
+                    <span class="nav-status" id="status-brakes">○</span>
+                </button>
+                <button class="nav-item" data-component="cockpit">
+                    <span class="nav-label">Guidão & Banco</span>
+                    <span class="nav-status" id="status-cockpit">○</span>
+                </button>
+                <button class="nav-item" data-component="accessories">
+                    <span class="nav-label">Acessórios</span>
+                    <span class="nav-status" id="status-accessories">○</span>
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Visualização Principal -->
+        <section class="builder-main">
+            
+            <!-- Painel de Visualização -->
+            <div class="builder-viewer">
+                <div class="bike-display">
+                    <div class="bike-visual">
+                        <div class="bike-component-display" id="component-display">
+                            <div class="empty-state">
+                                <p>Selecione um componente para começar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="spec-summary">
+                    <h3>ESPECIFICAÇÃO ATUAL</h3>
+                    <div class="specs-list" id="specs-list">
+                        <div class="spec-item placeholder">Nenhum componente selecionado</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Painel de Seleção -->
+            <div class="builder-selector">
+                
+                <!-- Frame Selection -->
+                <div class="component-panel" id="panel-frame" style="display: block;">
+                    <div class="panel-header">
+                        <h3>Escolher Quadro</h3>
+                        <p>Selecione o tipo de quadro desejado</p>
+                    </div>
+                    <div class="options-grid" id="options-frame">
+                        <!-- Carregado dinamicamente -->
+                    </div>
+                </div>
+
+                <!-- Wheels Selection -->
+                <div class="component-panel" id="panel-wheels">
+                    <div class="panel-header">
+                        <h3>Escolher Rodas</h3>
+                        <p>Configure tamanho e tipo de roda</p>
+                    </div>
+                    <div class="options-grid" id="options-wheels">
+                        <!-- Carregado dinamicamente -->
+                    </div>
+                </div>
+
+                <!-- Drivetrain Selection -->
+                <div class="component-panel" id="panel-drivetrain">
+                    <div class="panel-header">
+                        <h3>Escolher Transmissão</h3>
+                        <p>Selecione corrente e cassete</p>
+                    </div>
+                    <div class="options-grid" id="options-drivetrain">
+                        <!-- Carregado dinamicamente -->
+                    </div>
+                </div>
+
+                <!-- Brakes Selection -->
+                <div class="component-panel" id="panel-brakes">
+                    <div class="panel-header">
+                        <h3>Escolher Freios</h3>
+                        <p>Sistema de travagem</p>
+                    </div>
+                    <div class="options-grid" id="options-brakes">
+                        <!-- Carregado dinamicamente -->
+                    </div>
+                </div>
+
+                <!-- Cockpit Selection -->
+                <div class="component-panel" id="panel-cockpit">
+                    <div class="panel-header">
+                        <h3>Guidão & Banco</h3>
+                        <p>Conforto e ergonomia</p>
+                    </div>
+                    <div class="options-grid" id="options-cockpit">
+                        <!-- Carregado dinamicamente -->
+                    </div>
+                </div>
+
+                <!-- Accessories Selection -->
+                <div class="component-panel" id="panel-accessories">
+                    <div class="panel-header">
+                        <h3>Acessórios Opcionais</h3>
+                        <p>Personalize sua bike</p>
+                    </div>
+                    <div class="options-grid" id="options-accessories">
+                        <!-- Carregado dinamicamente -->
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Painel de Resumo e Ação (Direita) -->
+        <aside class="builder-summary">
+            <div class="summary-card">
+                <div class="summary-header">
+                    <h3>RESUMO DA BIKE</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="summary-content">
+                    <div class="summary-item" id="summary-frame">
+                        <span class="item-label">Quadro:</span>
+                        <span class="item-value">-</span>
+                    </div>
+                    <div class="summary-item" id="summary-wheels">
+                        <span class="item-label">Rodas:</span>
+                        <span class="item-value">-</span>
+                    </div>
+                    <div class="summary-item" id="summary-drivetrain">
+                        <span class="item-label">Transmissão:</span>
+                        <span class="item-value">-</span>
+                    </div>
+                    <div class="summary-item" id="summary-brakes">
+                        <span class="item-label">Freios:</span>
+                        <span class="item-value">-</span>
+                    </div>
+                    <div class="summary-item" id="summary-cockpit">
+                        <span class="item-label">Guidão:</span>
+                        <span class="item-value">-</span>
+                    </div>
+                    <div id="summary-accessories-list"></div>
+                </div>
+
+                <div class="summary-divider"></div>
+
+                <div class="pricing-section">
+                    <div class="price-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal-price">R$ 0,00</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Frete Est.:</span>
+                        <span id="shipping-price">R$ 0,00</span>
+                    </div>
+                    <div class="price-total">
+                        <span>TOTAL:</span>
+                        <span id="total-price">R$ 0,00</span>
+                    </div>
+                </div>
+
+                <button class="btn-add-cart" id="btn-add-cart" disabled>
+                    Adicionar ao Carrinho
+                </button>
+                
+                <button class="btn-clear" id="btn-clear-builder">
+                    Limpar Configuração
+                </button>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>ROOST</h3>
+                <p>Construa sua bicicleta perfeita com componentes de qualidade.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="index.html">Catálogo</a></li>
+                    <li><a href="personalizar.html">Builder</a></li>
+                    <li><a href="carrinho.html">Carrinho</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 ROOST - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script src="personalizacao.js"></script>
+</body>
+</html>

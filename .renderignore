@@ -1,0 +1,15 @@
+.git
+.gitignore
+.env
+.env.local
+*.log
+target/
+node_modules/
+*.class
+.DS_Store
+.idea/
+*.iml
+.vscode/
+build/
+dist/
+.gradle/
